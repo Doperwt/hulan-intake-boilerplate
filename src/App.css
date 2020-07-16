@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'),
+    url('assets/fonts/Roboto-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+body {
+    background: #BBBBBB22
+}

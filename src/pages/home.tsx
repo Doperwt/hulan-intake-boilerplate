@@ -12,7 +12,7 @@ export default class Home extends Component<Props, State> {
         return (
             <div
                 style={{
-                    fontFamily: "sans-serif",
+                    fontFamily: "Roboto",
                     lineHeight: "1.5em",
                     maxWidth: 600,
                     padding: 20,
