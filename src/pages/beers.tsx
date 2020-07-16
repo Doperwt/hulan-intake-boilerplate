@@ -55,7 +55,7 @@ export default class Beers extends Component<Props, State> {
         const filteredBeers = beers.filter(beer => beer.type === selectedBeerType || selectedBeerType === (menuBeerTypesArray.length - 1));
         return (
             <div style={{flexGrow:1}}>
-                <h1>Biertjes</h1>
+                <h1>Bieren</h1>
                 <NativeSelect
                     value={selectedBeerType}
                     onChange={e => this.filterBeers(e)}
