@@ -37,6 +37,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+## Packages
+### Material-ui
+withStyles adds the classes prop to a component wich can be used to style elements.
+
+### react-router-dom
+adds switch and routes
+
+withRouter adds the following props to a component
+- history
+- match
+- location
+match.params.(url param) allows access to params
+history.push can be used to change route from a function.
 
 ## Docker
 Build image with 
