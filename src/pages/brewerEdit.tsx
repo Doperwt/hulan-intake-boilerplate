@@ -26,6 +26,15 @@ interface State {
 }
 
 const styles = {
+    container: {
+        display: "flex",
+        flexDirection: "column" as FlexDirectionProperty,
+        alignItems: "center"
+    },
+    card: {
+        maxWidth: "500px",
+        width: "100%"
+    },
     cardContent: {
         display: "flex",
         flexDirection: "column" as FlexDirectionProperty
@@ -51,12 +60,6 @@ const styles = {
     },
     even: {
         background: "#CCCCCC"
-    },
-    okay: {
-        background: "#0baa00"
-    },
-    alert: {
-        background: "#aa0000"
     }
 }
 
@@ -88,7 +91,6 @@ class BrewerEdit extends Component<Props, State> {
                 .then(brewer => {
                     this.getBeers().then(beers => {
                         const selectedBeer = beers.filter(beer => brewer.beerIds.filter(beerId => beerId === beer.id).length === 0)[0].id;
-                        console.log(brewer);
                         this.setState({...this.state, brewer: brewer, beers: beers, selectedBeer, loadingState: LoadingState.LOADED, snackbarOpen: true, snackbarMessage: "Brouwerij geladen"})
                     })
                     .catch(err => {
@@ -175,8 +177,9 @@ class BrewerEdit extends Component<Props, State> {
         const unlinkedBeers = beers.filter(beer => brewer.beerIds.filter(beerId => beerId === beer.id).length === 0);
 
         return (
-
-            <Card>
+            <div className={classes.container}>
+                <h1>Brouwerij aanpassen</h1>
+                <Card className={classes.card}>
                 {loadingState === LoadingState.LOADED ?
                     <CardContent className={classes.cardContent}>
                         <TextField
@@ -239,6 +242,7 @@ class BrewerEdit extends Component<Props, State> {
                     key="snack-bar"
                 />
             </Card>
+            </div>
         );
     }
 }

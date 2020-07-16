@@ -27,6 +27,15 @@ interface State {
 }
 
 const styles = {
+    container: {
+        display: "flex",
+        flexDirection: "column" as FlexDirectionProperty,
+        alignItems: "center"
+    },
+    card: {
+        maxWidth: "500px",
+        width: "100%"
+    },
     cardContent: {
         display: "flex",
         flexDirection: "column" as FlexDirectionProperty
@@ -91,7 +100,9 @@ class BeerEdit extends Component<Props, State> {
         const {classes} = this.props;
 
         return (
-            <Card>
+            <div className={classes.container}>
+                <h1>Bier aanpassen</h1>
+                <Card className={classes.card}>
                 {loadingState === LoadingState.LOADED ?
                     <CardContent className={classes.cardContent}>
                         <TextField
@@ -140,10 +151,11 @@ class BeerEdit extends Component<Props, State> {
                         />
                     </CardContent>
                     : 'not loaded'}
-                <CardActions className={classes.action}>
-                    <span className={classes.link} onClick={this.submitChanges.bind(this)} style={{textAlign: "center"}}>Opslaan</span>
-                </CardActions>
-            </Card>
+                    <CardActions className={classes.action}>
+                        <span className={classes.link} onClick={this.submitChanges.bind(this)} style={{textAlign: "center"}}>Opslaan</span>
+                    </CardActions>
+                </Card>
+            </div>
         );
     }
 }

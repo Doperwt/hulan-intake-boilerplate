@@ -44,12 +44,13 @@ class Login extends Component<Props, State> {
     }
 
     render() {
+        const {password, username} = this.state;
         return (
             <div style={{display: 'flex', flexDirection: 'column', alignItems:'center', justifyContent: 'center', height: '100vh'}}>
                 <p>username:</p>
-                <input type="text" onChange={e => this.handleLoginChange(e, 'username')} value=""/>
+                <input type="text" onChange={e => this.handleLoginChange(e, 'username')} value={username}/>
                 <p>password:</p>
-                <input type="password" onChange={e => this.handleLoginChange(e, 'password')} value=""/>
+                <input type="password" onChange={e => this.handleLoginChange(e, 'password')} value={password}/>
                 <button onClick={this.login.bind(this)}>Login</button>
             </div>
         );
